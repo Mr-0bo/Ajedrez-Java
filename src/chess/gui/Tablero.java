@@ -58,7 +58,7 @@ public class Tablero extends JPanel {
         for (int fila = 0; fila < 8; fila++) {
             for (int col = 0; col < 8; col++) {
                 JButton boton = new JButton();
-                boton.setFont(new Font("Arial", Font.PLAIN, 32));
+                boton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 32));
                 if ((fila + col) % 2 == 0) {
                     boton.setBackground(new java.awt.Color(245, 222, 179)); // blancas
                 } else {

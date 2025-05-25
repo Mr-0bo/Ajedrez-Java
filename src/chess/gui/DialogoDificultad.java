@@ -13,7 +13,7 @@ public class DialogoDificultad {
         };
 
         // Imagen
-        ImageIcon iconoOriginal = new ImageIcon("src/resources/icono1.png");
+        ImageIcon iconoOriginal = new ImageIcon("src/resources/dificultad.png");
         Image imagen = iconoOriginal.getImage();
         Image imagenNueva = imagen.getScaledInstance(64, 64, Image.SCALE_SMOOTH);
         ImageIcon icono = new ImageIcon(imagenNueva);

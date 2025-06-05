@@ -68,7 +68,7 @@ public class JuegoAjedrez extends JFrame {
         }
 
 
-        // PANEL NORTE: Captura de negras
+        // Panel norte
         JPanel panelNorte = new JPanel(new BorderLayout());
         areaCapturasNegras = new JTextArea(1, 30);
         areaCapturasNegras.setEditable(false);
@@ -77,7 +77,7 @@ public class JuegoAjedrez extends JFrame {
         scrollCapturasNegras.setPreferredSize(new Dimension(0, 30));
         panelNorte.add(scrollCapturasNegras, BorderLayout.CENTER);
 
-        // PANEL SUR: Captura de blancas
+        // Panel sur
         JPanel panelSur = new JPanel(new BorderLayout());
         areaCapturasBlancas = new JTextArea(1, 30);
         areaCapturasBlancas.setEditable(false);
@@ -86,7 +86,7 @@ public class JuegoAjedrez extends JFrame {
         scrollCapturasBlancas.setPreferredSize(new Dimension(0, 30));
         panelSur.add(scrollCapturasBlancas, BorderLayout.CENTER);
 
-        // PANEL ESTE: Historial y otros datitos
+        // Panel este
         JPanel panelInfoHistorial = new JPanel();
         panelInfoHistorial.setLayout(new BoxLayout(panelInfoHistorial, BoxLayout.Y_AXIS));
         labelTurno = new JLabel("Turno: " + (motor.getTurnoActual() == Color.BLANCO ? "Blancas" : "Negras"));
@@ -103,11 +103,11 @@ public class JuegoAjedrez extends JFrame {
         scrollHistorial.setPreferredSize(new Dimension(250, 0));
         panelInfoHistorial.add(scrollHistorial);
 
-        // PANEL CENTRAL: Contenedor del tablero
+        // Panel central
         JPanel panelCentro = new JPanel(new BorderLayout());
         panelCentro.add(panelTablero, BorderLayout.CENTER);
 
-        //PANEL OESTE con botón de Menú Principal
+        //Panel oeste
         JPanel panelOeste = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JButton botonMenu = new JButton("Menú Principal");
         botonMenu.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -120,7 +120,7 @@ public class JuegoAjedrez extends JFrame {
         });
         panelOeste.add(botonMenu);
 
-        // ORGANIZAR el layout
+        // Organizacion
         setLayout(new BorderLayout());
         add(panelNorte, BorderLayout.NORTH);
         add(panelSur, BorderLayout.SOUTH);
@@ -128,7 +128,7 @@ public class JuegoAjedrez extends JFrame {
         add(panelInfoHistorial, BorderLayout.EAST);
         add(panelOeste, BorderLayout.WEST);
 
-        // Asignar ActionListener a cada celda del tablero.
+        // Timbre
         for (int fila = 0; fila < 8; fila++) {
             for (int col = 0; col < 8; col++) {
                 JButton boton = panelTablero.getCelda(fila, col);
@@ -219,7 +219,7 @@ public class JuegoAjedrez extends JFrame {
         sbBlancas.append(" (Total: ").append(motor.getPuntosCapturas(motor.getCapturasBlancas())).append(" pts)");
         areaCapturasBlancas.setText(sbBlancas.toString());
     }
-    // No funciona lol, parte olvidada
+    // Debes mejorarlo :p
     private void guardarHistorial(String ganador, java.util.List<String> movimientos) {
         try (java.io.PrintWriter out = new java.io.PrintWriter(new java.io.FileWriter("historialJuegos.txt", true))) {
             out.println("Ganador: " + ganador);
